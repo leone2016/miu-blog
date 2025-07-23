@@ -1,4 +1,4 @@
 # MIU BLOG
 
-[Assignment 1]()
+[Assignment 2](https://github.com/leone2016/miu-blog/tree/main/assignment2)
 

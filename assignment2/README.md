@@ -34,4 +34,4 @@ This project will serve both as:
 
 
 ## Project Context Diagram
-![Project Context Diagram](https://raw.githubusercontent.com/miu-cs/assignment2/assets/context-diagram.png)
+![Project Context Diagram](https://github.com/leone2016/miu-blog/blob/main/assignment2/assets/context-diagram.png)
