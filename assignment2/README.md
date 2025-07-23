@@ -16,9 +16,11 @@ This project sets out to develop a **complete social blogging platform from scra
 </p>
 ------
 ## Project Context Diagram
+
 ![Project Context Diagram](./assets/context-diagram.png)
 
 ## User Cases Diagram
+
 ![User Cases Diagram](./assets/user-case-diagram.png)
 
 ## User Stories
