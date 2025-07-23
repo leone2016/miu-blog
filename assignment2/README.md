@@ -35,3 +35,6 @@ This project will serve both as:
 
 ## Project Context Diagram
 ![Project Context Diagram](https://github.com/leone2016/miu-blog/blob/main/assignment2/assets/context-diagram.png)
+
+## User Cases Diagram
+![User Cases Diagram](https://github.com/leone2016/miu-blog/blob/main/assignment2/assets/user-case-diagram.png)
