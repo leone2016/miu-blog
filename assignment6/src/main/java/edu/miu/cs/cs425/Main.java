@@ -4,14 +4,19 @@ package edu.miu.cs.cs425;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("SWE 425 - Software Engineering II");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Patient Management System (PAMS) Application");
+        System.out.println("Developed by: Your Name");
+        System.out.println("Date: " + java.time.LocalDate.now());
+        System.out.println("Welcome to the PAMS Application!");
+        System.out.println("This application allows you to manage patient information and appointments.");
+        System.out.println("You can add, view, and manage patient records.");
+        System.out.println("Please follow the instructions to navigate through the application.");
+        System.out.println("For more information, visit our website or contact support.");
+        System.out.println("Thank you for using the PAMS Application!");
+        System.out.println("Have a great day!");
+        // You can add more functionality here, such as creating a menu for user interaction
+
     }
 }
