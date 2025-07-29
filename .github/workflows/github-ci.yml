@@ -40,7 +40,7 @@ jobs:
         id: build
         run: |
           mvn -B package --file ${{ github.event.inputs.ASSIGNMENT }}/pom.xml
-          echo "jar_path=${{ github.event.inputs.ASSIGNMENT }}/target/cs425pamscliapp.jar" >> $GITHUB_OUTPUT
+          echo "jar_path=${{ github.event.inputs.ASSIGNMENT }}/target/pams-jar-with-dependencies.jar" >> $GITHUB_OUTPUT
       - name: Upload jar as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -87,7 +87,7 @@ jobs:
         with:
             tag_name: ${{ needs.build.outputs.release_version }}
             name: Release ${{ needs.build.outputs.release_version }}
-            files: cs425pamscliapp.jar
+            files: pams-jar-with-dependencies.jar
         env:
             GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Create Release Without Uploading Files (test)
