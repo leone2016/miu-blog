@@ -41,16 +41,27 @@ jobs:
         run: |
           mvn -B package --file ${{ github.event.inputs.ASSIGNMENT }}/pom.xml
           echo "jar_path=${{ github.event.inputs.ASSIGNMENT }}/target/cs425pamscliapp.jar" >> $GITHUB_OUTPUT
+      - name: Upload jar as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: ${{ github.event.inputs.ASSIGNMENT }}/target/cs425pamscliapp.jar
 
   release:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Necesario para crear un tag
           token: ${{ secrets.GH_PAT }}
+      - name: Download built jar
+        uses: actions/download-artifact@v4
+        with:
+          name: app-jar
       - name: Set up Git user
         run: |
           git config user.name "${{ github.actor }}"
@@ -67,6 +78,6 @@ jobs:
         with:
           tag_name: ${{ needs.build.outputs.release_version }}
           name: Release ${{ needs.build.outputs.release_version }}
-          files: ${{ needs.build.outputs.jar_path }}
+          files: cs425pamscliapp.jar
 
 
