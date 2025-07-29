@@ -1,4 +1,4 @@
-name: Patient Appointment Management System (PAMS) Java App CI with Maven
+name: Customer Mgmt Java App CI with Maven
 
 on:
   workflow_dispatch:
@@ -12,10 +12,19 @@ on:
           - assignment6
           - assignment7
           - assignment8
+      RELEASE_VERSION:
+        description: 'Tag and release version (e.g. v1.0.0)'
+        required: true
+        default: 'v1.0.0'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    outputs:
+      assignment: ${{ github.event.inputs.ASSIGNMENT }}
+      release_version: ${{ github.event.inputs.RELEASE_VERSION }}
+      jar_path: ${{ steps.build.outputs.jar_path }}
 
     steps:
       - uses: actions/checkout@v4
@@ -28,5 +37,35 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn -B package --file ${{ github.event.inputs.ASSIGNMENT }}/pom.xml
+        id: build
+        run: |
+          mvn -B package --file ${{ github.event.inputs.ASSIGNMENT }}/pom.xml
+          echo "jar_path=${{ github.event.inputs.ASSIGNMENT }}/target/cs425pamscliapp.jar" >> $GITHUB_OUTPUT
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Necesario para crear un tag
+
+      - name: Set up Git user
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Create Git Tag
+        run: |
+          git tag ${{ needs.build.outputs.release_version }}
+          git push origin ${{ needs.build.outputs.release_version }}
+
+      - name: Upload Release to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.build.outputs.release_version }}
+          name: Release ${{ needs.build.outputs.release_version }}
+          files: ${{ needs.build.outputs.jar_path }}
+
 
