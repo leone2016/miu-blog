@@ -50,10 +50,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Necesario para crear un tag
-
+          token: ${{ secrets.GH_PAT }}
       - name: Set up Git user
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
@@ -62,7 +60,7 @@ jobs:
         run: |
           git tag ${{ needs.build.outputs.release_version }}
           git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }} ${{ needs.build.outputs.release_version }}
-          #git push origin ${{ needs.build.outputs.release_version }}
+    
 
       - name: Upload Release to GitHub
         uses: softprops/action-gh-release@v1
