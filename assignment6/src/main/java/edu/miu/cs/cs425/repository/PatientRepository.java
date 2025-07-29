@@ -2,6 +2,8 @@ package edu.miu.cs.cs425.repository;
 
 import edu.miu.cs.cs425.model.Patient;
 
+import java.time.LocalDate;
+
 public class PatientRepository {
     private static PatientRepository instance;
 
@@ -17,8 +19,11 @@ public class PatientRepository {
 
     public Patient[] getAllPatients() {
         return new Patient[]{
-                new Patient( "John", "Doe", "123-456-7890", "johndoe@gmail.com", "123 Main St, Anytown, USA", "1990-01-01"),
-                new Patient( "Jane", "Smith", "987-654-3210", "janesmith@hotmail.com", "456 Elm St, Othertown, USA", "1985-05-15"),
+                new Patient(1, "Daniel", "Agar", "(641) 123-0009", "dagar@m.as", "1 N Street", LocalDate.parse("1987-01-19")),
+                new Patient(2, "Ana", "Smith", null, "amsith@te.edu", null, LocalDate.parse("1948-12-05")),
+                new Patient(3, "Marcus", "Garvey", "(123) 292-0018", null, "4 East Ave", LocalDate.parse("2001-09-18")),
+                new Patient(4, "Jeff", "Goldbloom", "(999) 165-1192", "jgold@es.co.za", null, LocalDate.parse("1995-02-28")),
+                new Patient(5, "Mary", "Washington", null, null, "30 W Burlington", LocalDate.parse("1932-05-31"))
         };
     }
 }

@@ -1,5 +1,9 @@
 package edu.miu.cs.cs425.model;
 
+import org.json.JSONObject;
+
+import java.time.LocalDate;
+
 /**
  * Problem Description and Tasks:
  * Assume you have been employed as a Software Engineer to
@@ -18,14 +22,16 @@ package edu.miu.cs.cs425.model;
  * objects (using the data given below).
  */
 public class Patient {
+    private Integer id;
     private String firstName;
     private String lastName;
     private String contactPhoneNumber;
     private String email;
     private String mailingAddress;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public Patient(String firstName, String lastName, String contactPhoneNumber, String email, String mailingAddress, String dateOfBirth) {
+    public Patient(Integer id,String firstName, String lastName, String contactPhoneNumber, String email, String mailingAddress, LocalDate dateOfBirth) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactPhoneNumber = contactPhoneNumber;
@@ -35,6 +41,9 @@ public class Patient {
     }
 
     // Getters and Setters
+    public Integer getId() {
+        return id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -75,12 +84,32 @@ public class Patient {
         this.mailingAddress = mailingAddress;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contactPhoneNumber='" + contactPhoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", mailingAddress='" + mailingAddress + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        JSONObject customerJsonObject = new JSONObject();
+        customerJsonObject.put("patientId", id);
+        customerJsonObject.put("firstName", firstName);
+        customerJsonObject.put("lastName", lastName);
+        return customerJsonObject.toString();
+    }
 }
