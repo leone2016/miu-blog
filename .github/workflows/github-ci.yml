@@ -79,5 +79,5 @@ jobs:
           tag_name: ${{ needs.build.outputs.release_version }}
           name: Release ${{ needs.build.outputs.release_version }}
           files: cs425pamscliapp.jar
-
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
