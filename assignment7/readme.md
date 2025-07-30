@@ -90,6 +90,6 @@ Amine Atmani
 
 ## ScreenShots
 
-![](/Users/leone/Documents/MIU/miu-blog/assignment7/instance ec2.png)<small>Instance EC2 running</small>
+![](./instance ec2.png)<small>Instance EC2 running</small>
 
-![](/Users/leone/Documents/MIU/miu-blog/assignment7/image.png)<small>Screenshots the API using the public IP/DNS of the above EC2.</small>
+![](./image.png)<small>Screenshots the API using the public IP/DNS of the above EC2.</small>
