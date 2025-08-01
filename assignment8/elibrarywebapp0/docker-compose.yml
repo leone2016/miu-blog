@@ -1,0 +1,85 @@
+#services:
+#  # Servicio para MySQL
+#  db:
+#    image: mysql:8.0
+#    container_name: mysql-db
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "lesson8"
+#      MYSQL_DATABASE: "swe_lesson8"
+#      MYSQL_USER: "lesson8"
+#      MYSQL_PASSWORD: "lesson8"
+#    ports:
+#      - "3306:3306"
+#    networks:
+#      - elibrary-network
+#    volumes:
+#      - db-data:/var/lib/mysql
+#
+#  # Servicio para Spring Boot
+#  app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: elibrarywebapp
+#    environment:
+#      DB_HOST: "db"          # Cambié esto a "db", que es el nombre del servicio de MySQL
+#      DB_NAME: "swe_lesson8"
+#      DB_USERNAME: "lesson8"
+#      DB_PASSWORD: "lesson8"
+#      DB_PORT: "3306"
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - db  # Asegura que db se inicie antes de app, pero no garantiza que MySQL esté listo
+#    networks:
+#      - elibrary-network
+#
+#networks:
+#  elibrary-network:
+#    driver: bridge
+#
+#volumes:
+#  db-data:
+#    driver: local
+---
+services:
+  # Servicio para MySQL
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "lesson8"
+      MYSQL_DATABASE: "swe_lesson8"
+      MYSQL_USER: "lesson8"
+      MYSQL_PASSWORD: "lesson8"
+    ports:
+      - "3306:3306"
+    networks:
+      - elibrary-network
+    volumes:
+      - db-data:/var/lib/mysql
+
+  # Servicio para Spring Boot usando imagen desde Docker Hub
+  app:
+    image: leone2015/elibrarywebapp0-app:1.0.0
+    container_name: elibrarywebapp
+    environment:
+      DB_HOST: "db"
+      DB_NAME: "swe_lesson8"
+      DB_USERNAME: "lesson8"
+      DB_PASSWORD: "lesson8"
+      DB_PORT: "3306"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - elibrary-network
+
+networks:
+  elibrary-network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local

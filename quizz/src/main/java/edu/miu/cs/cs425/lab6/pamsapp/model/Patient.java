@@ -4,6 +4,7 @@ import org.json.JSONObject;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.PriorityQueue;
 import java.util.StringJoiner;
 import java.util.UUID;
 
@@ -94,7 +95,10 @@ public class Patient {
                 .add("email='" + email + "'")
                 .add("dateOfBirth=" + dateOfBirth)
                 .add("mailingAddress=" + mailingAddress)
-                .toString();
+                .toString();Integer.compare(a[1], b[1])
+
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b)-> a[0].compa);//[k,v]
+
     }
 
     public Integer getAge() {
