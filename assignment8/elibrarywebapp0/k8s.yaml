@@ -1,3 +1,4 @@
+# MySQL Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,26 +27,26 @@ spec:
               value: "lesson8"
           ports:
             - containerPort: 3306
-      restartPolicy: Always
-
 ---
+# MySQL Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: elibrarywebapp-service
+  name: mysql-db-service
 spec:
   selector:
-    app: elibrarywebapp
+    app: mysql-db
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080  # Exponemos el puerto 8080 de la aplicación Spring Boot
-  type: LoadBalancer
+      port: 3306
+      targetPort: 3306
+  type: ClusterIP
 ---
+# elibrarywebapp Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: elibrarywebapp-leo-amine
+  name: elibrarywebapp-deployment
 spec:
   replicas: 3
   selector:
@@ -61,7 +62,7 @@ spec:
           image: leone2015/elibrarywebapp0-app:1.0.0
           env:
             - name: DB_HOST
-              value: "mysql-db"
+              value: "mysql-db-service"
             - name: DB_NAME
               value: "swe_lesson8"
             - name: DB_USERNAME
@@ -72,17 +73,17 @@ spec:
               value: "3306"
           ports:
             - containerPort: 8080
-      restartPolicy: Always
 ---
+# elibrarywebapp Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-db-service
+  name: elibrarywebapp-service
 spec:
   selector:
-    app: mysql-db
+    app: elibrarywebapp
   ports:
     - protocol: TCP
-      port: 3306
-      targetPort: 3306
-  clusterIP: None  # this makes the service headless, allowing direct access to the pods
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
