@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elibrarywebapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elibrarywebapp
+  template:
+    metadata:
+      labels:
+        app: elibrarywebapp
+    spec:
+      containers:
+        - name: elibrarywebapp
+          image: leone2015/elibrarywebapp0-app:1.0.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: "mysql"
+            - name: DB_NAME
+              value: "swe_lesson8"
+            - name: DB_USERNAME
+              value: "lesson8"
+            - name: DB_PASSWORD
+              value: "lesson8"
+            - name: DB_PORT
+              value: "3306"
