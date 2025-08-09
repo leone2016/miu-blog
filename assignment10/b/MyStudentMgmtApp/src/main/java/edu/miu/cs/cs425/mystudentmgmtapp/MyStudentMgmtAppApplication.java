@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
 
 @SpringBootApplication
@@ -26,8 +27,9 @@ public class MyStudentMgmtAppApplication implements CommandLineRunner {
     public void run(String... args) {
         // Courses
         Course cs401 = new Course("CS401", "Modern Prog Practices");
-        List<Course> courses = List.of(cs401);
+        Course cs402 = new Course("CS402", "Algorithm");
 
+        List<Course> courses = List.of(cs401, cs402);
         // Transcript
         Transcript transcript = new Transcript("BS Computer Science");
 
