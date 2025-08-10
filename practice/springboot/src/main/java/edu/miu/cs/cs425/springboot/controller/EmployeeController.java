@@ -1,6 +1,8 @@
 package edu.miu.cs.cs425.springboot.controller;
 
 import edu.miu.cs.cs425.springboot.dto.EmployeeDTO;
+import edu.miu.cs.cs425.springboot.entities.EmployeeEntity;
+import edu.miu.cs.cs425.springboot.services.EmployeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -10,6 +12,13 @@ import java.util.List;
 @RequestMapping(path = "/employees")
 public class EmployeeController {
 
+
+    private final EmployeService employeService;
+
+    public EmployeeController(EmployeService employeService) {
+        this.employeService = employeService;
+    }
+
     @GetMapping(path = "/hello")
     public String hello() {
         return "Hello LEONARDO";
@@ -17,17 +26,17 @@ public class EmployeeController {
 
     @GetMapping(path = "/{employeeId}")
     public EmployeeDTO getEmployeeById(@PathVariable(name = "employeeId") Long id) {
-        return new EmployeeDTO(id, "Leonardo da Vinci", "leoz.31@hotmail.com", 45, LocalDate.of(1452, 4, 15), true);
+        return employeService.getEmployeeById(id);
     }
 
     @GetMapping(path = "")
-    public String getAllEmmployees(@RequestParam Integer age) {
-        return "hi age is "+ age;
+    public List<EmployeeDTO> getAllEmmployees(@RequestParam Integer age) {
+        return employeService.getAllEmployees();
     }
 
     @PostMapping(path = "")
-    public String createEmployee(@RequestBody EmployeeDTO employeeDTO) {
-        return "test create employee"+ employeeDTO.toString();
+    public EmployeeDTO createEmployee(@RequestBody EmployeeDTO employeeDTO) {
+        return employeService.createNewEmployee(employeeDTO);
     }
 
 }

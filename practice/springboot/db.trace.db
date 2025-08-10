@@ -1,0 +1,72 @@
+2025-08-09 20:10:32.225415-05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:33:20.570798-05:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:34:26.768818-05:00 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:53:11.712782-05:00 jdbc[35]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:53:53.088948-05:00 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:54:39.045652-05:00 jdbc[46]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:55:21.981838-05:00 jdbc[47]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 20:59:55.887177-05:00 jdbc[48]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:01:12.461725-05:00 jdbc[49]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:03:08.093562-05:00 jdbc[59]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:03:23.782832-05:00 jdbc[69]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:03:38.469813-05:00 jdbc[79]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:05:40.446248-05:00 jdbc[80]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:06:21.424414-05:00 jdbc[90]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:06:54.301166-05:00 jdbc[100]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:08:14.965447-05:00 jdbc[101]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:09:36.243344-05:00 jdbc[111]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:10:27.311342-05:00 jdbc[121]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:11:57.135744-05:00 jdbc[131]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:12:10.851730-05:00 jdbc[141]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:13:26.575103-05:00 jdbc[151]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:14:00.395357-05:00 jdbc[152]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:15:26.724745-05:00 jdbc[162]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-08-09 21:17:25.337979-05:00 jdbc[172]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_EMPLOYEES" already exists; SQL statement:
+create global temporary table HTE_employees(age integer, date_of_joining date, is_active boolean, rn_ integer not null, id bigint, email varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
